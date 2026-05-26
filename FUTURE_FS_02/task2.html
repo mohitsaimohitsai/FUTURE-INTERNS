@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mini CRM Dashboard</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      background:#020617;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    nav h1{
+      color:#facc15;
+      font-size:34px;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-size:18px;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#facc15;
+    }
+
+    /* HERO */
+
+    .hero{
+      text-align:center;
+      padding:90px 20px;
+      background:linear-gradient(135deg,#1e293b,#334155);
+    }
+
+    .hero h2{
+      font-size:55px;
+      color:#facc15;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:20px;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      padding:14px 30px;
+      border:none;
+      border-radius:30px;
+      background:#facc15;
+      color:black;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.1);
+      background:white;
+    }
+
+    /* DASHBOARD */
+
+    .dashboard{
+      padding:60px 8%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:42px;
+      color:#facc15;
+      margin-bottom:40px;
+    }
+
+    .card-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:35px;
+      border-radius:20px;
+      text-align:center;
+      transition:0.4s;
+      box-shadow:0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      background:#facc15;
+      color:black;
+    }
+
+    .card h3{
+      font-size:35px;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      font-size:18px;
+    }
+
+    /* FORM */
+
+    .form-section{
+      padding:60px 8%;
+    }
+
+    form{
+      max-width:650px;
+      margin:auto;
+      background:#1e293b;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 0 15px rgba(0,0,0,0.5);
+    }
+
+    form h2{
+      text-align:center;
+      color:#facc15;
+      margin-bottom:25px;
+      font-size:35px;
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      padding:15px;
+      margin-bottom:20px;
+      border:none;
+      border-radius:10px;
+      outline:none;
+      font-size:16px;
+    }
+
+    textarea{
+      resize:none;
+    }
+
+    /* TABLE */
+
+    .table-section{
+      padding:60px 8%;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      background:#1e293b;
+      border-radius:20px;
+      overflow:hidden;
+    }
+
+    table th{
+      background:#facc15;
+      color:black;
+      padding:18px;
+      font-size:18px;
+    }
+
+    table td{
+      padding:16px;
+      text-align:center;
+      border-bottom:1px solid #334155;
+    }
+
+    tr:hover{
+      background:#334155;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#020617;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h2{
+        font-size:38px;
+      }
+
+      table{
+        font-size:14px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <h1>Mini CRM</h1>
+
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Leads</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h2>Client Lead Management System</h2>
+
+    <p>
+      Manage client leads, update status, and track business growth easily.
+    </p>
+
+    <button class="btn">Get Started</button>
+
+  </section>
+
+  <!-- DASHBOARD -->
+
+  <section class="dashboard">
+
+    <h2 class="title">Dashboard Overview</h2>
+
+    <div class="card-container">
+
+      <div class="card">
+        <h3>120</h3>
+        <p>Total Leads</p>
+      </div>
+
+      <div class="card">
+        <h3>75</h3>
+        <p>Contacted</p>
+      </div>
+
+      <div class="card">
+        <h3>30</h3>
+        <p>Converted</p>
+      </div>
+
+      <div class="card">
+        <h3>15</h3>
+        <p>Pending</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FORM -->
+
+  <section class="form-section">
+
+    <form onsubmit="showMessage(event)">
+
+      <h2>Add New Lead</h2>
+
+      <input type="text" placeholder="Client Name" required>
+
+      <input type="email" placeholder="Client Email" required>
+
+      <select required>
+
+        <option value="">Select Status</option>
+        <option>New</option>
+        <option>Contacted</option>
+        <option>Converted</option>
+
+      </select>
+
+      <textarea rows="5" placeholder="Client Notes"></textarea>
+
+      <button type="submit" class="btn" style="width:100%;">
+        Save Lead
+      </button>
+
+    </form>
+
+  </section>
+
+  <!-- TABLE -->
+
+  <section class="table-section">
+
+    <h2 class="title">Lead Records</h2>
+
+    <table>
+
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+
+      <tr>
+        <td>Mohit</td>
+        <td>mohit@gmail.com</td>
+        <td>New</td>
+        <td>Interested in services</td>
+      </tr>
+
+      <tr>
+        <td>Mohitt</td>
+        <td>mohitt@gmail.com</td>
+        <td>Contacted</td>
+        <td>Meeting scheduled</td>
+      </tr>
+
+      <tr>
+        <td>Mohitttt</td>
+        <td>mohitttt@gmail.com</td>
+        <td>Converted</td>
+        <td>Client confirmed deal</td>
+      </tr>
+
+    </table>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026 Mini CRM Dashboard | Designed by P Mohit Sai
+    </p>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function showMessage(event){
+
+      event.preventDefault();
+
+      alert("Lead Saved Successfully!");
+
+    }
+
+  </script>
+
+</body>
+</html>
